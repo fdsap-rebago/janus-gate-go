@@ -7,6 +7,13 @@ definitions:
         example: 10724585
         type: integer
     type: object
+  request.PRNumber:
+    properties:
+      prNumber:
+        description: PR Number
+        example: AAP36467-1638243443748
+        type: string
+    type: object
   response.ResponseModel:
     properties:
       data: {}
@@ -18,34 +25,24 @@ definitions:
   response.SuperSaving:
     properties:
       acc:
-        description: Client Account
         type: string
       balance:
-        description: Account Balance
         type: number
       centerCode:
-        description: Center Code
         type: integer
       centerName:
-        description: Center Name
         type: string
       cid:
-        description: Client ID
         type: integer
       fullname:
-        description: Client Fullname
         type: string
       unitCode:
-        description: Unit Code
         type: integer
       unitName:
-        description: Unit Name
         type: string
       withdrawable:
-        description: Withdrawable
         type: number
       withdrawalAmount:
-        description: Withdrawal Amount
         type: number
     type: object
 host: localhost:8000
@@ -58,6 +55,32 @@ info:
   title: JANUS V2
   version: "2.0"
 paths:
+  /api/public/v1/coremicro/CallBackReference:
+    post:
+      consumes:
+      - application/json
+      description: Call Back Reference
+      parameters:
+      - description: Reference Number
+        in: body
+        name: prNumber
+        required: true
+        schema:
+          $ref: '#/definitions/request.PRNumber'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ResponseModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ResponseModel'
+      summary: Call Back Reference
+      tags:
+      - COREMICRO
   /api/public/v1/coremicro/getSavingsForSuperApp:
     post:
       consumes:

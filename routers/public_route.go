@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"JanusGate/coremicro"
+	coremicro "JanusGate/controller"
 	"JanusGate/struct/publics"
 
 	"github.com/gofiber/fiber/v2"
@@ -29,4 +29,5 @@ func SetupPublicRoutes(app *fiber.App) {
 	// Core Micro Endpoint
 	coreEndpoint := v1Endpoint.Group("/coremicro")
 	coreEndpoint.Post("/getSavingsForSuperApp", coremicro.SuperAppSaving)
+	coreEndpoint.Post("/CallBackReference", coremicro.CallBackReference)
 }

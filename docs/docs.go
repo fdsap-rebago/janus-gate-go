@@ -20,6 +20,46 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/api/public/v1/coremicro/CallBackReference": {
+            "post": {
+                "description": "Call Back Reference",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "COREMICRO"
+                ],
+                "summary": "Call Back Reference",
+                "parameters": [
+                    {
+                        "description": "Reference Number",
+                        "name": "prNumber",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.PRNumber"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModel"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/api/public/v1/coremicro/getSavingsForSuperApp": {
             "post": {
                 "description": "Super Saving",
@@ -72,6 +112,16 @@ const docTemplate = `{
                 }
             }
         },
+        "request.PRNumber": {
+            "type": "object",
+            "properties": {
+                "prNumber": {
+                    "description": "PR Number",
+                    "type": "string",
+                    "example": "AAP36467-1638243443748"
+                }
+            }
+        },
         "response.ResponseModel": {
             "type": "object",
             "properties": {
@@ -88,43 +138,33 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "acc": {
-                    "description": "Client Account",
                     "type": "string"
                 },
                 "balance": {
-                    "description": "Account Balance",
                     "type": "number"
                 },
                 "centerCode": {
-                    "description": "Center Code",
                     "type": "integer"
                 },
                 "centerName": {
-                    "description": "Center Name",
                     "type": "string"
                 },
                 "cid": {
-                    "description": "Client ID",
                     "type": "integer"
                 },
                 "fullname": {
-                    "description": "Client Fullname",
                     "type": "string"
                 },
                 "unitCode": {
-                    "description": "Unit Code",
                     "type": "integer"
                 },
                 "unitName": {
-                    "description": "Unit Name",
                     "type": "string"
                 },
                 "withdrawable": {
-                    "description": "Withdrawable",
                     "type": "number"
                 },
                 "withdrawalAmount": {
-                    "description": "Withdrawal Amount",
                     "type": "number"
                 }
             }

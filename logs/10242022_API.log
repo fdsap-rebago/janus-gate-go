@@ -1,0 +1,49 @@
+2022/10/24 12:42:21 
+INFO: 2022/10/24 12:42:21 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 12:42:21 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 12:42:21 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/getSavingForSuperApp
+INFO: 2022/10/24 12:42:21 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 12:42:21 CORE-MICRO: RESPONSE: []response.SuperSaving{response.SuperSaving{Cid:10724585, FullName:"PANTALEON,ROMMELSAN  MIGUEL", Acc:"1012-0000-37638438", Balance:1135, Withdrawable:335, CenterCode:9255758, UnitCode:468363, CenterName:"SK CAINGIN", UnitName:"Sta.Rosa", WithdrawalAmount:0}}
+INFO: 2022/10/24 12:42:21 CORE-MICRO: STATUS: 200 
+2022/10/24 12:44:21 
+INFO: 2022/10/24 12:44:21 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 12:44:21 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 12:44:21 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/getSavingForSuperApp
+INFO: 2022/10/24 12:44:21 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 12:44:21 CORE-MICRO: RESPONSE: []response.SuperSaving{response.SuperSaving{Cid:10724585, FullName:"PANTALEON,ROMMELSAN  MIGUEL", Acc:"1012-0000-37638438", Balance:1135, Withdrawable:335, CenterCode:9255758, UnitCode:468363, CenterName:"SK CAINGIN", UnitName:"Sta.Rosa", WithdrawalAmount:0}}
+INFO: 2022/10/24 12:44:21 CORE-MICRO: STATUS: 200 
+2022/10/24 12:45:20 
+INFO: 2022/10/24 12:45:20 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 12:45:20 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 12:45:20 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/getSavingForSuperApp
+INFO: 2022/10/24 12:45:20 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 12:45:20 CORE-MICRO: RESPONSE: []response.SuperSaving{response.SuperSaving{Cid:10724585, FullName:"PANTALEON,ROMMELSAN  MIGUEL", Acc:"1012-0000-37638438", Balance:1135, Withdrawable:335, CenterCode:9255758, UnitCode:468363, CenterName:"SK CAINGIN", UnitName:"Sta.Rosa", WithdrawalAmount:0}}
+INFO: 2022/10/24 12:45:20 CORE-MICRO: STATUS: 200 
+2022/10/24 12:50:05 
+INFO: 2022/10/24 12:50:05 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 12:50:05 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 12:50:05 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/getSavingForSuperApp
+INFO: 2022/10/24 12:50:05 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 12:50:05 CORE-MICRO: RESPONSE: []response.SuperSaving{response.SuperSaving{Cid:10724585, FullName:"PANTALEON,ROMMELSAN  MIGUEL", Acc:"1012-0000-37638438", Balance:1135, Withdrawable:335, CenterCode:9255758, UnitCode:468363, CenterName:"SK CAINGIN", UnitName:"Sta.Rosa", WithdrawalAmount:0}}
+INFO: 2022/10/24 12:50:05 CORE-MICRO: STATUS: 200 
+2022/10/24 13:12:40 
+INFO: 2022/10/24 13:12:40 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 13:12:40 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 13:12:40 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/24 13:12:40 CORE-MICRO: BODY: request.PRNumber{PrNumber:"AAP36467-1638243443748"}
+INFO: 2022/10/24 13:12:40 CORE-MICRO: RESPONSE: response.ReferenceCallBack{RetCode:1001, Message:"Transaction Exist!"}
+INFO: 2022/10/24 13:12:40 CORE-MICRO: STATUS: 200 
+2022/10/24 13:12:59 
+INFO: 2022/10/24 13:12:59 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 13:12:59 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 13:12:59 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/24 13:12:59 CORE-MICRO: BODY: request.PRNumber{PrNumber:"AAP36467-1638243443748s"}
+INFO: 2022/10/24 13:12:59 CORE-MICRO: RESPONSE: response.ReferenceCallBack{RetCode:4001, Message:"Transaction does not Exist!"}
+INFO: 2022/10/24 13:12:59 CORE-MICRO: STATUS: 200 
+2022/10/24 13:13:05 
+INFO: 2022/10/24 13:13:05 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 13:13:05 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 13:13:05 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/24 13:13:05 CORE-MICRO: BODY: request.PRNumber{PrNumber:"AAP36467-1638243443748"}
+INFO: 2022/10/24 13:13:05 CORE-MICRO: RESPONSE: response.ReferenceCallBack{RetCode:1001, Message:"Transaction Exist!"}
+INFO: 2022/10/24 13:13:05 CORE-MICRO: STATUS: 200 
