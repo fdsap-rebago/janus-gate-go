@@ -15,10 +15,10 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-// JANUS GATE - Super Saving
+// Developer		rebago
 // @summary 	  	Super Saving
 // @Description	  	Super Saving
-// @Tags		  	COREMICRO
+// @Tags		  	CORE MICRO
 // @Accept		  	json
 // @Produce		  	json
 // @Param       	cid body request.CID true  "Client ID"
@@ -89,16 +89,16 @@ func SuperAppSaving(c *fiber.Ctx) error {
 	return c.JSON(result)
 }
 
-// JANUS GATE - K2C Call Back Reference
+// Developer 		rebago
 // @summary 	  	Call Back Reference
 // @Description	  	Call Back Reference
-// @Tags		  	COREMICRO
+// @Tags		  	CORE MICRO
 // @Accept		  	json
 // @Produce		  	json
 // @Param       	prNumber body request.PRNumber true  "Reference Number"
 // @Success		  	200 {object} response.ResponseModel
 // @Failure		  	400 {object} response.ResponseModel
-// @Router			/api/public/v1/coremicro/CallBackReference [post]
+// @Router			/api/public/v1/coremicro/callBackReference [post]
 func CallBackReference(c *fiber.Ctx) error {
 	prNumber := request.PRNumber{}
 
@@ -161,4 +161,150 @@ func CallBackReference(c *fiber.Ctx) error {
 
 	middleware.SystemLoggerAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", resp, result, "localhost:8000")
 	return c.JSON(result)
+}
+
+// Developer	 Geromme
+// @Summary      Customer Savings Information
+// @Description  Customer Savings Information
+// @Tags         CORE MICRO
+// @Accept       json
+// @Produce      json
+// @Param        acc body request.Acc true "Account Number"
+// @Success      200  {object} response.CustSavingInfo
+// @Failure      400  {object} response.ResponseModel
+// @Router       /api/public/v1/coremicro/custSavingInfo [post]
+func CustSavingInfo(c *fiber.Ctx) error {
+	acc := request.Acc{}
+
+	if parsErr := c.BodyParser(&acc); parsErr != nil {
+		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, parsErr, "localhost:8000")
+		return c.JSON(response.ResponseModel{
+			RetCode: "400",
+			Message: "Bad request",
+			Data:    parsErr,
+		})
+	}
+
+	jsonReq, marshallErr := json.Marshal(acc)
+
+	if marshallErr != nil {
+		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, marshallErr, "localhost:8000")
+		return c.JSON(response.ResponseModel{
+			RetCode: "400",
+			Message: "Can't masrhall",
+			Data:    marshallErr,
+		})
+	}
+
+	resp, respErr := http.Post("https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo", "application/json; charset=utf-8", bytes.NewBuffer(jsonReq))
+
+	if respErr != nil {
+		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, respErr, "localhost:8000")
+		return c.JSON(response.ResponseModel{
+			RetCode: "400",
+			Message: "Can't masrhall",
+			Data:    respErr,
+		})
+	}
+	defer resp.Body.Close()
+
+	body, readErr := ioutil.ReadAll(resp.Body)
+
+	if readErr != nil {
+		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, readErr, "localhost:8000")
+		return c.JSON(response.ResponseModel{
+			RetCode: "400",
+			Message: "Reading error",
+			Data:    readErr,
+		})
+	}
+
+	result := []response.CustSavingInfo{}
+	unmErr := json.Unmarshal(body, &result)
+
+	if unmErr != nil {
+		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, unmErr, "localhost:8000")
+		return c.JSON(response.ResponseModel{
+			RetCode: "400",
+			Message: "Unmarshall error",
+			Data:    unmErr,
+		})
+	}
+
+	middleware.SystemLoggerAPI("https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo", acc, "CORE-MICRO", resp, result, "localhost:8000")
+	return c.JSON(result)
+}
+
+// Developer		Geromme
+// @Summary			Customer Savings List
+// @Description 	Customer Savings List
+// @Tags        	CORE MICRO
+// @Accept      	json
+// @Produce     	json
+// @Param       	cid body request.CID true  "Client ID"
+// @Success     	200  {object} response.CustSavingsLists
+// @Failure      	400  {object} response.ResponseModel
+// @Router      	/api/public/v1/coremicro/customerSavings/ [post]
+func CustSavings(c *fiber.Ctx) error {
+	cid := request.CID{}
+
+	if parsErr := c.BodyParser(&cid); parsErr != nil {
+		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, parsErr, "localhost:8000")
+		return c.JSON(response.ResponseModel{
+			RetCode: "400",
+			Message: "Bad request",
+			Data:    parsErr,
+		})
+	}
+
+	jsonReq, marshallErr := json.Marshal(cid)
+
+	if marshallErr != nil {
+		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, marshallErr, "localhost:8000")
+		return c.JSON(response.ResponseModel{
+			RetCode: "400",
+			Message: "Can't masrhall",
+			Data:    marshallErr,
+		})
+	}
+
+	resp, respErr := http.Post("https://cmfstest.cardmri.com/CoreAccounts/API/custSavingsList", "application/json; charset=utf-8", bytes.NewBuffer(jsonReq))
+
+	if respErr != nil {
+		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, respErr, "localhost:8000")
+		return c.JSON(response.ResponseModel{
+			RetCode: "400",
+			Message: "Can't masrhall",
+			Data:    respErr,
+		})
+	}
+
+	defer resp.Body.Close()
+
+	body, readErr := ioutil.ReadAll(resp.Body)
+
+	if readErr != nil {
+		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, readErr, "localhost:8000")
+		return c.JSON(response.ResponseModel{
+			RetCode: "400",
+			Message: "Reading error",
+			Data:    readErr,
+		})
+	}
+
+	result := []response.CustSavingsLists{}
+	unmErr := json.Unmarshal(body, &result)
+
+	if unmErr != nil {
+		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, unmErr, "localhost:8000")
+		return c.JSON(response.ResponseModel{
+			RetCode: "400",
+			Message: "Unmarshall error",
+			Data:    unmErr,
+		})
+	}
+
+	middleware.SystemLoggerAPI("https://cmfstest.cardmri.com/CoreAccounts/API/custSavingsList", cid, "CORE-MICRO", resp, result, "localhost:8000")
+	return c.JSON(result)
+
 }

@@ -13,7 +13,7 @@
     "host": "localhost:8000",
     "basePath": "/",
     "paths": {
-        "/api/public/v1/coremicro/CallBackReference": {
+        "/api/public/v1/coremicro/callBackReference": {
             "post": {
                 "description": "Call Back Reference",
                 "consumes": [
@@ -23,7 +23,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "COREMICRO"
+                    "CORE MICRO"
                 ],
                 "summary": "Call Back Reference",
                 "parameters": [
@@ -53,6 +53,86 @@
                 }
             }
         },
+        "/api/public/v1/coremicro/custSavingInfo": {
+            "post": {
+                "description": "Customer Savings Information",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CORE MICRO"
+                ],
+                "summary": "Customer Savings Information",
+                "parameters": [
+                    {
+                        "description": "Account Number",
+                        "name": "acc",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.Acc"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/response.CustSavingInfo"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/public/v1/coremicro/customerSavings/": {
+            "post": {
+                "description": "Customer Savings List",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CORE MICRO"
+                ],
+                "summary": "Customer Savings List",
+                "parameters": [
+                    {
+                        "description": "Client ID",
+                        "name": "cid",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.CID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/response.CustSavingsLists"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/api/public/v1/coremicro/getSavingsForSuperApp": {
             "post": {
                 "description": "Super Saving",
@@ -63,7 +143,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "COREMICRO"
+                    "CORE MICRO"
                 ],
                 "summary": "Super Saving",
                 "parameters": [
@@ -95,6 +175,16 @@
         }
     },
     "definitions": {
+        "request.Acc": {
+            "type": "object",
+            "properties": {
+                "acc": {
+                    "description": "Account",
+                    "type": "string",
+                    "example": "1012-0000-00060776"
+                }
+            }
+        },
         "request.CID": {
             "type": "object",
             "properties": {
@@ -112,6 +202,68 @@
                     "description": "PR Number",
                     "type": "string",
                     "example": "AAP36467-1638243443748"
+                }
+            }
+        },
+        "response.CustSavingInfo": {
+            "type": "object",
+            "properties": {
+                "acc": {},
+                "accDesc": {
+                    "type": "string"
+                },
+                "acctType": {
+                    "type": "integer"
+                },
+                "appType": {
+                    "type": "integer"
+                },
+                "balance": {
+                    "type": "number"
+                },
+                "cid": {
+                    "type": "integer"
+                },
+                "classificationCode": {
+                    "type": "integer"
+                },
+                "classificationType": {
+                    "type": "integer"
+                },
+                "dopen": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "response.CustSavingsLists": {
+            "type": "object",
+            "properties": {
+                "acc": {
+                    "type": "string"
+                },
+                "accDesc": {
+                    "type": "string"
+                },
+                "acctType": {
+                    "type": "integer"
+                },
+                "balance": {
+                    "type": "number"
+                },
+                "cid": {
+                    "type": "integer"
+                },
+                "dopen": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                },
+                "statusDesc": {
+                    "type": "string"
                 }
             }
         },

@@ -47,3 +47,24 @@ INFO: 2022/10/24 13:13:05 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/
 INFO: 2022/10/24 13:13:05 CORE-MICRO: BODY: request.PRNumber{PrNumber:"AAP36467-1638243443748"}
 INFO: 2022/10/24 13:13:05 CORE-MICRO: RESPONSE: response.ReferenceCallBack{RetCode:1001, Message:"Transaction Exist!"}
 INFO: 2022/10/24 13:13:05 CORE-MICRO: STATUS: 200 
+2022/10/24 13:57:11 
+INFO: 2022/10/24 13:57:11 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 13:57:11 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 13:57:11 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo
+INFO: 2022/10/24 13:57:11 CORE-MICRO: BODY: request.Acc{Acc:"1012-0000-00060776"}
+INFO: 2022/10/24 13:57:11 CORE-MICRO: RESPONSE: []response.CustSavingInfo{response.CustSavingInfo{Cid:9273835, Acc:"1012-0000-00060776", AppType:0, AcctType:60, AccDesc:"Pledge Account", Dopen:"2009-08-15", Status:10, ClassificationCode:0, ClassificationType:0, Balance:7403.08}}
+INFO: 2022/10/24 13:57:11 CORE-MICRO: STATUS: 200 
+2022/10/24 13:57:52 
+INFO: 2022/10/24 13:57:52 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 13:57:52 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 13:57:52 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo
+INFO: 2022/10/24 13:57:52 CORE-MICRO: BODY: request.Acc{Acc:"1012-0000-00060776"}
+INFO: 2022/10/24 13:57:52 CORE-MICRO: RESPONSE: []response.CustSavingInfo{response.CustSavingInfo{Cid:9273835, Acc:"1012-0000-00060776", AppType:0, AcctType:60, AccDesc:"Pledge Account", Dopen:"2009-08-15", Status:10, ClassificationCode:0, ClassificationType:0, Balance:7403.08}}
+INFO: 2022/10/24 13:57:52 CORE-MICRO: STATUS: 200 
+2022/10/24 14:08:29 
+INFO: 2022/10/24 14:08:29 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 14:08:29 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 14:08:29 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingsList
+INFO: 2022/10/24 14:08:29 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 14:08:29 CORE-MICRO: RESPONSE: []response.CustSavingsLists{response.CustSavingsLists{Cid:10724585, Acc:"1012-0000-37638438", Acctype:60, AccDesc:"Pledge", Dopen:"2022-02-10", StatusDesc:"Active Account", Balance:1135, Status:10}}
+INFO: 2022/10/24 14:08:29 CORE-MICRO: STATUS: 200 

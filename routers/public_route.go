@@ -29,5 +29,7 @@ func SetupPublicRoutes(app *fiber.App) {
 	// Core Micro Endpoint
 	coreEndpoint := v1Endpoint.Group("/coremicro")
 	coreEndpoint.Post("/getSavingsForSuperApp", coremicro.SuperAppSaving)
-	coreEndpoint.Post("/CallBackReference", coremicro.CallBackReference)
+	coreEndpoint.Post("/callBackReference", coremicro.CallBackReference)
+	coreEndpoint.Post("/custSavingInfo", coremicro.CustSavingInfo)
+	coreEndpoint.Post("/customerSavings", coremicro.CustSavings)
 }

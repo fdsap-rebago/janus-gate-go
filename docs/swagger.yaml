@@ -1,5 +1,12 @@
 basePath: /
 definitions:
+  request.Acc:
+    properties:
+      acc:
+        description: Account
+        example: 1012-0000-00060776
+        type: string
+    type: object
   request.CID:
     properties:
       cid:
@@ -12,6 +19,47 @@ definitions:
       prNumber:
         description: PR Number
         example: AAP36467-1638243443748
+        type: string
+    type: object
+  response.CustSavingInfo:
+    properties:
+      acc: {}
+      accDesc:
+        type: string
+      acctType:
+        type: integer
+      appType:
+        type: integer
+      balance:
+        type: number
+      cid:
+        type: integer
+      classificationCode:
+        type: integer
+      classificationType:
+        type: integer
+      dopen:
+        type: string
+      status:
+        type: integer
+    type: object
+  response.CustSavingsLists:
+    properties:
+      acc:
+        type: string
+      accDesc:
+        type: string
+      acctType:
+        type: integer
+      balance:
+        type: number
+      cid:
+        type: integer
+      dopen:
+        type: string
+      status:
+        type: integer
+      statusDesc:
         type: string
     type: object
   response.ResponseModel:
@@ -55,7 +103,7 @@ info:
   title: JANUS V2
   version: "2.0"
 paths:
-  /api/public/v1/coremicro/CallBackReference:
+  /api/public/v1/coremicro/callBackReference:
     post:
       consumes:
       - application/json
@@ -80,7 +128,59 @@ paths:
             $ref: '#/definitions/response.ResponseModel'
       summary: Call Back Reference
       tags:
-      - COREMICRO
+      - CORE MICRO
+  /api/public/v1/coremicro/custSavingInfo:
+    post:
+      consumes:
+      - application/json
+      description: Customer Savings Information
+      parameters:
+      - description: Account Number
+        in: body
+        name: acc
+        required: true
+        schema:
+          $ref: '#/definitions/request.Acc'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.CustSavingInfo'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ResponseModel'
+      summary: Customer Savings Information
+      tags:
+      - CORE MICRO
+  /api/public/v1/coremicro/customerSavings/:
+    post:
+      consumes:
+      - application/json
+      description: Customer Savings List
+      parameters:
+      - description: Client ID
+        in: body
+        name: cid
+        required: true
+        schema:
+          $ref: '#/definitions/request.CID'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.CustSavingsLists'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ResponseModel'
+      summary: Customer Savings List
+      tags:
+      - CORE MICRO
   /api/public/v1/coremicro/getSavingsForSuperApp:
     post:
       consumes:
@@ -106,5 +206,5 @@ paths:
             $ref: '#/definitions/response.ResponseModel'
       summary: Super Saving
       tags:
-      - COREMICRO
+      - CORE MICRO
 swagger: "2.0"
