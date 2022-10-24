@@ -68,3 +68,80 @@ INFO: 2022/10/24 14:08:29 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/
 INFO: 2022/10/24 14:08:29 CORE-MICRO: BODY: request.CID{Cid:10724585}
 INFO: 2022/10/24 14:08:29 CORE-MICRO: RESPONSE: []response.CustSavingsLists{response.CustSavingsLists{Cid:10724585, Acc:"1012-0000-37638438", Acctype:60, AccDesc:"Pledge", Dopen:"2022-02-10", StatusDesc:"Active Account", Balance:1135, Status:10}}
 INFO: 2022/10/24 14:08:29 CORE-MICRO: STATUS: 200 
+2022/10/24 14:26:41 
+INFO: 2022/10/24 14:26:41 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 14:26:41 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 14:26:41 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/getSavingForSuperApp
+INFO: 2022/10/24 14:26:41 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 14:26:41 CORE-MICRO: RESPONSE: []response.SuperSaving{response.SuperSaving{Cid:10724585, FullName:"PANTALEON,ROMMELSAN  MIGUEL", Acc:"1012-0000-37638438", Balance:1135, Withdrawable:335, CenterCode:9255758, UnitCode:468363, CenterName:"SK CAINGIN", UnitName:"Sta.Rosa", WithdrawalAmount:0}}
+INFO: 2022/10/24 14:26:41 CORE-MICRO: STATUS: 200 
+2022/10/24 14:29:36 
+INFO: 2022/10/24 14:29:36 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 14:29:36 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 14:29:36 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/24 14:29:36 CORE-MICRO: BODY: request.PRNumber{PrNumber:"AAP36467-1638243443748"}
+INFO: 2022/10/24 14:29:36 CORE-MICRO: RESPONSE: response.ReferenceCallBack{RetCode:1001, Message:"Transaction Exist!"}
+INFO: 2022/10/24 14:29:36 CORE-MICRO: STATUS: 200 
+2022/10/24 14:37:15 
+INFO: 2022/10/24 14:37:15 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 14:37:15 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 14:37:15 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/LoanInfo
+INFO: 2022/10/24 14:37:15 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 14:37:15 CORE-MICRO: RESPONSE: []response.LoanInfo{}
+INFO: 2022/10/24 14:37:15 CORE-MICRO: STATUS: 200 
+2022/10/24 14:39:44 
+INFO: 2022/10/24 14:39:44 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 14:39:44 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 14:39:44 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/LoanInfo
+INFO: 2022/10/24 14:39:44 CORE-MICRO: BODY: request.Acc{Acc:"1012-0000-00060776"}
+INFO: 2022/10/24 14:39:44 CORE-MICRO: RESPONSE: []response.LoanInfo{response.LoanInfo{Cid:9273835, Acc:"1012-0000-00060776", AppType:0, AcctType:60, AccDesc:"Pledge Account", Dopen:"2009-08-15", Domaturity:"2009-08-15", Term:0, Weekspaid:0, Status:10, Principal:50, Interest:0, Others:0, Discounted:0, Netproceed:0, Balance:0, Prin:50, Intr:0, Oth:0, Penalty:0, Waivedint:0, Disbby:"", Approvby:"", Cycle:0, Frequency:0, Annumdiv:0, Lngrpcode:0, Proff:0, Fundsource:0, Conintrate:0, Amortcond:0, Amortcondvalue:0, Classification_code:0, Classification_type:0, Remarks:interface {}(nil), Amort:interface {}(nil), IsLumpsum:0, LoanID:"0", AmortList:[]response.AmortList{}, Charges:map[string]interface {}{"acc":"1012-0000-00060776", "charges":[]interface {}{}}}}
+INFO: 2022/10/24 14:39:44 CORE-MICRO: STATUS: 200 
+2022/10/24 15:31:26 
+INFO: 2022/10/24 15:31:26 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 15:31:26 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 15:31:26 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/multiplePayment
+INFO: 2022/10/24 15:31:26 CORE-MICRO: BODY: request.MultiplePaymentRequest{Payment:request.Payment{Um:"string", Acc:"4062-0000-00672656", Pay:50, Area:"Laguna 2", Code:2, Iiid:9652333, Type:"0", Unit:"Head Office", Uuid:"string", Amort:0, Gives:0, BalInt:0, DueInt:0, Status:0, AppType:0, BalPrin:0, DuePrin:0, IbalInt:0, LoanBal:0, ManCode:0, SaveBal:0, AcctDesc:"string", Accttype:0, AreaCode:0, Disbdate:"string", IbalPrin:0, Interest:0, Maturity:"string", WaiveInt:0, Withdraw:0, Writeoff:0, ClassDesc:"string", DateStart:"string", Principal:0, StaffName:"string", UnpaidCtr:0, CenterCode:0, CenterName:"string", ClientName:"string", StatusDesc:"string", Writtenoff:0, Classification:0}, Trndate:"string", OrNumber:0, PrNumber:"string", SourceId:0, Username:"string", Particulars:"string", RemitterCID:"string", TotalCollection:0}
+INFO: 2022/10/24 15:31:26 CORE-MICRO: RESPONSE: response.ResponseModelwoData{RetCode:"", Message:""}
+INFO: 2022/10/24 15:31:26 CORE-MICRO: STATUS: 400 
+2022/10/24 15:48:13 
+INFO: 2022/10/24 15:48:13 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 15:48:13 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 15:48:13 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/OpenPaymentTransaction
+INFO: 2022/10/24 15:48:13 CORE-MICRO: BODY: request.OpenPaymentRequest{AccountNumber:"1129000022901288", Amount:20, TrnReference:"CIP123-trndate01", Particulars:"Client Initiated Payment - Weekly Due Payment", Username:"konek2CARD", SourceSaveAcc:"1012-0000-37622903", TransFee:0, TransFeeParticulars:"string"}
+INFO: 2022/10/24 15:48:13 CORE-MICRO: RESPONSE: response.OpenPaymentResponse{Code:"1001", Message:"Payment was successfully Posted", Details:[]response.Details{response.Details{SourceId:interface {}(nil), SourceAccountNumber:interface {}(nil), CustomerNumber:"1129000022901288", CustomerName:"ROTAQUIO, MARILOU ALILIN", TransactionAmount:20, ReferenceNumber:"CIP123-trndate01", CoreReference:"", PaidDate:interface {}(nil)}}}
+INFO: 2022/10/24 15:48:13 CORE-MICRO: STATUS: 200 
+2022/10/24 16:00:55 
+INFO: 2022/10/24 16:00:55 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 16:00:55 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 16:00:55 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/mobile/api/v1/SearchCustomerCID
+INFO: 2022/10/24 16:00:55 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 16:00:55 CORE-MICRO: RESPONSE: response.CustomerInformation{Cid:10724585, Lastname:"PANTALEON", FirstName:"ROMMEL", MiddleName:"SAN  MIGUEL", MaidenFName:"Myrna", MaidenLName:"San Miguel", MaidenMName:"P", DoBirth:"1993-09-02", BirthPlace:"CITY OF SANTA ROSA, LAGUNA", Sex:19, CivilStatus:154, Title:146, Status:14, Classification:1872, SubClassification:1884, Business:2577, DEntry:"2022-02-10", DoRecognized:"2022-02-10", DoResigned:"1900-01-01", BrCode:467863, UnitCode:468363, CenterCode:9255758, Dosri:0, Reffered:"CARD MRI MEMBER", Remarks:"NA", AccountNumber:"6500107245850", SearchName:interface {}(nil), Address:[]interface {}{map[string]interface {}{"addressDetails":"", "addressID":2.535433e+06, "addressType":"Home Address", "addressTypeID":395, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}, map[string]interface {}{"addressDetails":"", "addressID":2.535434e+06, "addressType":"Current Address", "addressTypeID":392, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}, map[string]interface {}{"addressDetails":"", "addressID":2.535435e+06, "addressType":"Birth Place", "addressTypeID":1990, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}}, Contact:[]interface {}{map[string]interface {}{"contact":"09157694531", "contactType":"Primary Contact", "contactTypeID":3018, "iiid":1.0724585e+07, "series":2}}, MemberMaidenFName:"RommeL", MemberMaidenLName:"San  Miguel", MemberMaidenMName:"", UnitName:interface {}(nil), CenterName:interface {}(nil)}
+INFO: 2022/10/24 16:00:55 CORE-MICRO: STATUS: 200 
+2022/10/24 16:01:20 
+INFO: 2022/10/24 16:01:20 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 16:01:20 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 16:01:20 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/mobile/api/v1/SearchCustomerCID
+INFO: 2022/10/24 16:01:20 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 16:01:20 CORE-MICRO: RESPONSE: response.CustomerInformation{Cid:10724585, Lastname:"PANTALEON", FirstName:"ROMMEL", MiddleName:"SAN  MIGUEL", MaidenFName:"Myrna", MaidenLName:"San Miguel", MaidenMName:"P", DoBirth:"1993-09-02", BirthPlace:"CITY OF SANTA ROSA, LAGUNA", Sex:19, CivilStatus:154, Title:146, Status:14, Classification:1872, SubClassification:1884, Business:2577, DEntry:"2022-02-10", DoRecognized:"2022-02-10", DoResigned:"1900-01-01", BrCode:467863, UnitCode:468363, CenterCode:9255758, Dosri:0, Reffered:"CARD MRI MEMBER", Remarks:"NA", AccountNumber:"6500107245850", SearchName:interface {}(nil), Address:[]interface {}{map[string]interface {}{"addressDetails":"", "addressID":2.535433e+06, "addressType":"Home Address", "addressTypeID":395, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}, map[string]interface {}{"addressDetails":"", "addressID":2.535434e+06, "addressType":"Current Address", "addressTypeID":392, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}, map[string]interface {}{"addressDetails":"", "addressID":2.535435e+06, "addressType":"Birth Place", "addressTypeID":1990, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}}, Contact:[]interface {}{map[string]interface {}{"contact":"09157694531", "contactType":"Primary Contact", "contactTypeID":3018, "iiid":1.0724585e+07, "series":2}}, MemberMaidenFName:"RommeL", MemberMaidenLName:"San  Miguel", MemberMaidenMName:"", UnitName:interface {}(nil), CenterName:interface {}(nil)}
+INFO: 2022/10/24 16:01:20 CORE-MICRO: STATUS: 200 
+2022/10/24 16:02:39 
+INFO: 2022/10/24 16:02:39 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 16:02:39 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 16:02:39 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/multiplePayment
+INFO: 2022/10/24 16:02:39 CORE-MICRO: BODY: request.MultiplePaymentRequest{Payment:map[string]interface {}{"acc":"4062-0000-00672656", "acctDesc":"string", "accttype":0, "amort":0, "appType":0, "area":"Laguna 2", "areaCode":0, "balInt":0, "balPrin":0, "centerCode":0, "centerName":"string", "classDesc":"string", "classification":0, "clientName":"string", "code":2, "dateStart":"string", "disbdate":"string", "dueInt":0, "duePrin":0, "gives":0, "ibalInt":0, "ibalPrin":0, "iiid":9.652333e+06, "interest":0, "loanBal":0, "manCode":0, "maturity":"string", "pay":50, "principal":0, "saveBal":0, "staffName":"string", "status":0, "statusDesc":"string", "type":"0", "um":"string", "unit":"Head Office", "unpaidCtr":0, "uuid":"string", "waiveInt":0, "withdraw":0, "writeoff":0, "writtenoff":0}, Trndate:"string", OrNumber:0, PrNumber:"string", SourceId:0, Username:"string", Particulars:"string", RemitterCID:"string", TotalCollection:0}
+INFO: 2022/10/24 16:02:39 CORE-MICRO: RESPONSE: response.ResponseModelwoData{RetCode:"", Message:""}
+INFO: 2022/10/24 16:02:39 CORE-MICRO: STATUS: 400 
+2022/10/24 16:10:30 
+INFO: 2022/10/24 16:10:30 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 16:10:30 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 16:10:30 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/mobile/api/v1/SearchCustomerCID
+INFO: 2022/10/24 16:10:30 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 16:10:30 CORE-MICRO: RESPONSE: response.CustomerInformation{Cid:10724585, Lastname:"PANTALEON", FirstName:"ROMMEL", MiddleName:"SAN  MIGUEL", MaidenFName:"Myrna", MaidenLName:"San Miguel", MaidenMName:"P", DoBirth:"1993-09-02", BirthPlace:"CITY OF SANTA ROSA, LAGUNA", Sex:19, CivilStatus:154, Title:146, Status:14, Classification:1872, SubClassification:1884, Business:2577, DEntry:"2022-02-10", DoRecognized:"2022-02-10", DoResigned:"1900-01-01", BrCode:467863, UnitCode:468363, CenterCode:9255758, Dosri:0, Reffered:"CARD MRI MEMBER", Remarks:"NA", AccountNumber:"6500107245850", SearchName:interface {}(nil), Address:[]interface {}{map[string]interface {}{"addressDetails":"", "addressID":2.535433e+06, "addressType":"Home Address", "addressTypeID":395, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}, map[string]interface {}{"addressDetails":"", "addressID":2.535434e+06, "addressType":"Current Address", "addressTypeID":392, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}, map[string]interface {}{"addressDetails":"", "addressID":2.535435e+06, "addressType":"Birth Place", "addressTypeID":1990, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}}, Contact:[]interface {}{map[string]interface {}{"contact":"09157694531", "contactType":"Primary Contact", "contactTypeID":3018, "iiid":1.0724585e+07, "series":2}}, MemberMaidenFName:"RommeL", MemberMaidenLName:"San  Miguel", MemberMaidenMName:"", UnitName:interface {}(nil), CenterName:interface {}(nil)}
+INFO: 2022/10/24 16:10:30 CORE-MICRO: STATUS: 200 
+2022/10/24 16:10:55 
+INFO: 2022/10/24 16:10:55 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 16:10:55 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 16:10:55 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/mobile/api/v1/searchLoanList
+INFO: 2022/10/24 16:10:55 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/24 16:10:55 CORE-MICRO: RESPONSE: []response.LoanList{response.LoanList{Acc:"4002-0000-30019046", Status:"Current Loan", DataRelease:"2022-07-20", AcctType:"Sikap 2", Principal:4000, Interest:589, Oth:0, Balance:2589, Term:23, PaidTerm:10}, response.LoanList{Acc:"4002-0000-28287803", Status:"Closed", DataRelease:"2022-02-11", AcctType:"Sikap 2", Principal:3000, Interest:442, Oth:0, Balance:0, Term:23, PaidTerm:23}}
+INFO: 2022/10/24 16:10:55 CORE-MICRO: STATUS: 200 

@@ -14,12 +14,95 @@ definitions:
         example: 10724585
         type: integer
     type: object
+  request.MultiplePaymentRequest:
+    properties:
+      orNumber:
+        type: integer
+      particulars:
+        type: string
+      payment: {}
+      prNumber:
+        type: string
+      remitterCID:
+        type: string
+      sourceId:
+        type: integer
+      totalCollection:
+        type: integer
+      trndate:
+        type: string
+      username:
+        type: string
+    type: object
+  request.OpenPaymentRequest:
+    properties:
+      accountNumber:
+        example: "1129000022901288"
+        type: string
+      amount:
+        example: 20
+        type: integer
+      particulars:
+        example: Client Initiated Payment - Weekly Due Payment
+        type: string
+      sourceSaveAcc:
+        example: 1012-0000-37622903
+        type: string
+      transFee:
+        example: 0
+        type: integer
+      transFeeParticulars:
+        type: string
+      trnReference:
+        example: CIP123-trndate01
+        type: string
+      username:
+        example: konek2CARD
+        type: string
+    type: object
   request.PRNumber:
     properties:
       prNumber:
         description: PR Number
         example: AAP36467-1638243443748
         type: string
+    type: object
+  response.AmortList:
+    properties:
+      acc:
+        type: string
+      carVal:
+        type: number
+      dnum:
+        type: integer
+      dueDate:
+        type: string
+      endBal:
+        type: number
+      endInt:
+        type: number
+      endOth:
+        type: number
+      instFlag:
+        type: integer
+      instPd:
+        type: number
+      intr:
+        type: number
+      oth:
+        type: number
+      penPd:
+        type: number
+      penalty:
+        type: number
+      pledgeAmort:
+        type: number
+      prin:
+        type: number
+      servFee:
+        type: number
+      upInt:
+        type: number
     type: object
   response.CustSavingInfo:
     properties:
@@ -62,9 +145,299 @@ definitions:
       statusDesc:
         type: string
     type: object
+  response.CustomerInformation:
+    properties:
+      accountNumber:
+        type: string
+      address: {}
+      birthPlace:
+        type: string
+      brCode:
+        type: integer
+      business:
+        type: integer
+      centerCode:
+        type: integer
+      centerName: {}
+      cid:
+        type: integer
+      civilStatus:
+        type: integer
+      classification:
+        type: integer
+      contact: {}
+      doBirth:
+        type: string
+      doEntry:
+        type: string
+      doRecognized:
+        type: string
+      doResigned:
+        type: string
+      dosri:
+        type: integer
+      firstname:
+        type: string
+      lastname:
+        type: string
+      maidenFname:
+        type: string
+      maidenLName:
+        type: string
+      maidenMName:
+        type: string
+      memberMaidenFName:
+        type: string
+      memberMaidenLName:
+        type: string
+      memberMaidenMName:
+        type: string
+      middlename:
+        type: string
+      reffered:
+        type: string
+      remarks:
+        type: string
+      searchName: {}
+      sex:
+        type: integer
+      status:
+        type: integer
+      subClassification:
+        type: integer
+      title:
+        type: integer
+      unitCode:
+        type: integer
+      unitName: {}
+    type: object
+  response.Details:
+    properties:
+      coreReference:
+        type: string
+      customerName:
+        type: string
+      customerNumber:
+        type: string
+      paidDate: {}
+      referenceNumber:
+        type: string
+      sourceAccountNumber: {}
+      sourceId: {}
+      transactionAmount:
+        type: number
+    type: object
+  response.GenerateCol:
+    properties:
+      acc:
+        type: string
+      acctDesc:
+        type: string
+      accttype:
+        type: integer
+      amort:
+        type: number
+      appType:
+        type: integer
+      area:
+        type: string
+      areaCode:
+        type: integer
+      balInt:
+        type: number
+      balPrin:
+        type: number
+      centerCode:
+        type: integer
+      centerName:
+        type: string
+      classDesc:
+        type: string
+      classification:
+        type: integer
+      clientName:
+        type: string
+      code:
+        type: integer
+      dateStart:
+        type: string
+      disbdate:
+        type: string
+      dueInt:
+        type: number
+      duePrin:
+        type: number
+      gives:
+        type: integer
+      ibalInt:
+        type: number
+      ibalPrin:
+        type: number
+      iiid:
+        type: integer
+      interest:
+        type: number
+      loanBal:
+        type: number
+      manCode:
+        type: integer
+      maturity:
+        type: string
+      pay:
+        type: number
+      principal:
+        type: number
+      saveBal:
+        type: number
+      staffName:
+        type: string
+      status:
+        type: integer
+      statusDesc:
+        type: string
+      type:
+        type: integer
+      um:
+        type: string
+      unit:
+        type: string
+      unpaidCtr:
+        type: integer
+      uuid: {}
+      waiveInt:
+        type: number
+      withdraw:
+        type: number
+      writeoff:
+        type: integer
+      writtenoff:
+        type: integer
+    type: object
+  response.LoanInfo:
+    properties:
+      acc:
+        type: string
+      accDesc:
+        type: string
+      acctType:
+        type: integer
+      amort: {}
+      amortList:
+        items:
+          $ref: '#/definitions/response.AmortList'
+        type: array
+      amortcond:
+        type: integer
+      amortcondvalue:
+        type: number
+      annumdiv:
+        type: integer
+      appType:
+        type: integer
+      approvby:
+        type: string
+      balance:
+        type: number
+      charges: {}
+      cid:
+        type: integer
+      classification_code:
+        type: integer
+      classification_type:
+        type: integer
+      conintrate:
+        type: number
+      cycle:
+        type: integer
+      disbby:
+        type: string
+      discounted:
+        type: number
+      domaturity:
+        type: string
+      dopen:
+        type: string
+      frequency:
+        type: integer
+      fundsource:
+        type: integer
+      interest:
+        type: number
+      intr:
+        type: number
+      isLumpsum:
+        type: integer
+      lngrpcode:
+        type: integer
+      loanID: {}
+      netproceed:
+        type: number
+      oth:
+        type: number
+      others:
+        type: number
+      penalty:
+        type: number
+      prin:
+        type: number
+      principal:
+        type: number
+      proff:
+        type: integer
+      remarks: {}
+      status:
+        type: integer
+      term:
+        type: integer
+      waivedint:
+        type: number
+      weekspaid:
+        type: integer
+    type: object
+  response.LoanList:
+    properties:
+      acc:
+        type: string
+      acctType:
+        type: string
+      balance:
+        type: number
+      dateRelease:
+        type: string
+      interest:
+        type: number
+      oth:
+        type: number
+      paidTerm:
+        type: integer
+      principal:
+        type: number
+      status:
+        type: string
+      term:
+        type: integer
+    type: object
+  response.OpenPaymentResponse:
+    properties:
+      code:
+        type: string
+      details:
+        items:
+          $ref: '#/definitions/response.Details'
+        type: array
+      message:
+        type: string
+    type: object
   response.ResponseModel:
     properties:
       data: {}
+      message:
+        type: string
+      retCode:
+        type: string
+    type: object
+  response.ResponseModelwoData:
+    properties:
       message:
         type: string
       retCode:
@@ -107,7 +480,7 @@ paths:
     post:
       consumes:
       - application/json
-      description: Call Back Reference
+      description: Used to check if the transaction is posted in CORE
       parameters:
       - description: Reference Number
         in: body
@@ -121,19 +494,19 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/response.ResponseModel'
+            $ref: '#/definitions/response.ResponseModelwoData'
         "400":
           description: Bad Request
           schema:
             $ref: '#/definitions/response.ResponseModel'
-      summary: Call Back Reference
+      summary: CORE-TRANSACTION-CHECKER
       tags:
       - CORE MICRO
   /api/public/v1/coremicro/custSavingInfo:
     post:
       consumes:
       - application/json
-      description: Customer Savings Information
+      description: Used to get the details of savings of NGO clients
       parameters:
       - description: Account Number
         in: body
@@ -152,14 +525,14 @@ paths:
           description: Bad Request
           schema:
             $ref: '#/definitions/response.ResponseModel'
-      summary: Customer Savings Information
+      summary: CORE-SAVINGS-INFORMATION
       tags:
       - CORE MICRO
-  /api/public/v1/coremicro/customerSavings/:
+  /api/public/v1/coremicro/customerSavingsList/:
     post:
       consumes:
       - application/json
-      description: Customer Savings List
+      description: Used to get the list of savings of NGO clients
       parameters:
       - description: Client ID
         in: body
@@ -178,14 +551,40 @@ paths:
           description: Bad Request
           schema:
             $ref: '#/definitions/response.ResponseModel'
-      summary: Customer Savings List
+      summary: CORE-CLIENT-SAVINGS-LIST
+      tags:
+      - CORE MICRO
+  /api/public/v1/coremicro/generateColCid/:
+    post:
+      consumes:
+      - application/json
+      description: Used to get the weekly due of the clients
+      parameters:
+      - description: Client ID
+        in: body
+        name: cid
+        required: true
+        schema:
+          $ref: '#/definitions/request.CID'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.GenerateCol'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ResponseModel'
+      summary: CORE-DUE-GENERATOR
       tags:
       - CORE MICRO
   /api/public/v1/coremicro/getSavingsForSuperApp:
     post:
       consumes:
       - application/json
-      description: Super Saving
+      description: Used to get the total and available amount of client savings
       parameters:
       - description: Client ID
         in: body
@@ -204,7 +603,137 @@ paths:
           description: Bad Request
           schema:
             $ref: '#/definitions/response.ResponseModel'
-      summary: Super Saving
+      summary: CORE-AVAILABLE-BALANCE
+      tags:
+      - CORE MICRO
+  /api/public/v1/coremicro/loanInfo:
+    post:
+      consumes:
+      - application/json
+      description: Used to get the information of loan and amortization
+      parameters:
+      - description: Account Number
+        in: body
+        name: acc
+        required: true
+        schema:
+          $ref: '#/definitions/request.Acc'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.LoanInfo'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ResponseModel'
+      summary: CORE-LOAN-INFORMATION
+      tags:
+      - CORE MICRO
+  /api/public/v1/coremicro/multiplePayment:
+    post:
+      consumes:
+      - application/json
+      description: Used to get the information of loan and amortization
+      parameters:
+      - description: Payment Request
+        in: body
+        name: paymentRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.MultiplePaymentRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ResponseModelwoData'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ResponseModel'
+      summary: CORE-LOAN-INFORMATION
+      tags:
+      - CORE MICRO
+  /api/public/v1/coremicro/openPaymentTransaction:
+    post:
+      consumes:
+      - application/json
+      description: Old API used to pay loan in CORE
+      parameters:
+      - description: Search
+        in: body
+        name: paymentRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.OpenPaymentRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.OpenPaymentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ResponseModel'
+      summary: CORE-OLD-LOAN-PAYMENT
+      tags:
+      - CORE MICRO
+  /api/public/v1/coremicro/searchCustomerCID:
+    post:
+      consumes:
+      - application/json
+      description: Used to get the details of NGO clients
+      parameters:
+      - description: Client ID
+        in: body
+        name: cid
+        required: true
+        schema:
+          $ref: '#/definitions/request.CID'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.CustomerInformation'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ResponseModel'
+      summary: CORE-CLIENT-INFORMATION
+      tags:
+      - CORE MICRO
+  /api/public/v1/coremicro/searchLoanList:
+    post:
+      consumes:
+      - application/json
+      description: Used to get the details of NGO clients
+      parameters:
+      - description: Client ID
+        in: body
+        name: cid
+        required: true
+        schema:
+          $ref: '#/definitions/request.CID'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.LoanList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ResponseModel'
+      summary: CORE-CLIENT-INFORMATION
       tags:
       - CORE MICRO
 swagger: "2.0"

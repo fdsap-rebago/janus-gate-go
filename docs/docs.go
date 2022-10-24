@@ -22,7 +22,7 @@ const docTemplate = `{
     "paths": {
         "/api/public/v1/coremicro/callBackReference": {
             "post": {
-                "description": "Call Back Reference",
+                "description": "Used to check if the transaction is posted in CORE",
                 "consumes": [
                     "application/json"
                 ],
@@ -32,7 +32,7 @@ const docTemplate = `{
                 "tags": [
                     "CORE MICRO"
                 ],
-                "summary": "Call Back Reference",
+                "summary": "CORE-TRANSACTION-CHECKER",
                 "parameters": [
                     {
                         "description": "Reference Number",
@@ -48,7 +48,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/response.ResponseModel"
+                            "$ref": "#/definitions/response.ResponseModelwoData"
                         }
                     },
                     "400": {
@@ -62,7 +62,7 @@ const docTemplate = `{
         },
         "/api/public/v1/coremicro/custSavingInfo": {
             "post": {
-                "description": "Customer Savings Information",
+                "description": "Used to get the details of savings of NGO clients",
                 "consumes": [
                     "application/json"
                 ],
@@ -72,7 +72,7 @@ const docTemplate = `{
                 "tags": [
                     "CORE MICRO"
                 ],
-                "summary": "Customer Savings Information",
+                "summary": "CORE-SAVINGS-INFORMATION",
                 "parameters": [
                     {
                         "description": "Account Number",
@@ -100,9 +100,9 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/public/v1/coremicro/customerSavings/": {
+        "/api/public/v1/coremicro/customerSavingsList/": {
             "post": {
-                "description": "Customer Savings List",
+                "description": "Used to get the list of savings of NGO clients",
                 "consumes": [
                     "application/json"
                 ],
@@ -112,7 +112,7 @@ const docTemplate = `{
                 "tags": [
                     "CORE MICRO"
                 ],
-                "summary": "Customer Savings List",
+                "summary": "CORE-CLIENT-SAVINGS-LIST",
                 "parameters": [
                     {
                         "description": "Client ID",
@@ -140,9 +140,9 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/public/v1/coremicro/getSavingsForSuperApp": {
+        "/api/public/v1/coremicro/generateColCid/": {
             "post": {
-                "description": "Super Saving",
+                "description": "Used to get the weekly due of the clients",
                 "consumes": [
                     "application/json"
                 ],
@@ -152,7 +152,47 @@ const docTemplate = `{
                 "tags": [
                     "CORE MICRO"
                 ],
-                "summary": "Super Saving",
+                "summary": "CORE-DUE-GENERATOR",
+                "parameters": [
+                    {
+                        "description": "Client ID",
+                        "name": "cid",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.CID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/response.GenerateCol"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/public/v1/coremicro/getSavingsForSuperApp": {
+            "post": {
+                "description": "Used to get the total and available amount of client savings",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CORE MICRO"
+                ],
+                "summary": "CORE-AVAILABLE-BALANCE",
                 "parameters": [
                     {
                         "description": "Client ID",
@@ -169,6 +209,206 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/response.SuperSaving"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/public/v1/coremicro/loanInfo": {
+            "post": {
+                "description": "Used to get the information of loan and amortization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CORE MICRO"
+                ],
+                "summary": "CORE-LOAN-INFORMATION",
+                "parameters": [
+                    {
+                        "description": "Account Number",
+                        "name": "acc",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.Acc"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/response.LoanInfo"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/public/v1/coremicro/multiplePayment": {
+            "post": {
+                "description": "Used to get the information of loan and amortization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CORE MICRO"
+                ],
+                "summary": "CORE-LOAN-INFORMATION",
+                "parameters": [
+                    {
+                        "description": "Payment Request",
+                        "name": "paymentRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.MultiplePaymentRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModelwoData"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/public/v1/coremicro/openPaymentTransaction": {
+            "post": {
+                "description": "Old API used to pay loan in CORE",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CORE MICRO"
+                ],
+                "summary": "CORE-OLD-LOAN-PAYMENT",
+                "parameters": [
+                    {
+                        "description": "Search",
+                        "name": "paymentRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.OpenPaymentRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/response.OpenPaymentResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/public/v1/coremicro/searchCustomerCID": {
+            "post": {
+                "description": "Used to get the details of NGO clients",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CORE MICRO"
+                ],
+                "summary": "CORE-CLIENT-INFORMATION",
+                "parameters": [
+                    {
+                        "description": "Client ID",
+                        "name": "cid",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.CID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/response.CustomerInformation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/response.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/public/v1/coremicro/searchLoanList": {
+            "post": {
+                "description": "Used to get the details of NGO clients",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CORE MICRO"
+                ],
+                "summary": "CORE-CLIENT-INFORMATION",
+                "parameters": [
+                    {
+                        "description": "Client ID",
+                        "name": "cid",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.CID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/response.LoanList"
                         }
                     },
                     "400": {
@@ -202,6 +442,72 @@ const docTemplate = `{
                 }
             }
         },
+        "request.MultiplePaymentRequest": {
+            "type": "object",
+            "properties": {
+                "orNumber": {
+                    "type": "integer"
+                },
+                "particulars": {
+                    "type": "string"
+                },
+                "payment": {},
+                "prNumber": {
+                    "type": "string"
+                },
+                "remitterCID": {
+                    "type": "string"
+                },
+                "sourceId": {
+                    "type": "integer"
+                },
+                "totalCollection": {
+                    "type": "integer"
+                },
+                "trndate": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "request.OpenPaymentRequest": {
+            "type": "object",
+            "properties": {
+                "accountNumber": {
+                    "type": "string",
+                    "example": "1129000022901288"
+                },
+                "amount": {
+                    "type": "integer",
+                    "example": 20
+                },
+                "particulars": {
+                    "type": "string",
+                    "example": "Client Initiated Payment - Weekly Due Payment"
+                },
+                "sourceSaveAcc": {
+                    "type": "string",
+                    "example": "1012-0000-37622903"
+                },
+                "transFee": {
+                    "type": "integer",
+                    "example": 0
+                },
+                "transFeeParticulars": {
+                    "type": "string"
+                },
+                "trnReference": {
+                    "type": "string",
+                    "example": "CIP123-trndate01"
+                },
+                "username": {
+                    "type": "string",
+                    "example": "konek2CARD"
+                }
+            }
+        },
         "request.PRNumber": {
             "type": "object",
             "properties": {
@@ -209,6 +515,62 @@ const docTemplate = `{
                     "description": "PR Number",
                     "type": "string",
                     "example": "AAP36467-1638243443748"
+                }
+            }
+        },
+        "response.AmortList": {
+            "type": "object",
+            "properties": {
+                "acc": {
+                    "type": "string"
+                },
+                "carVal": {
+                    "type": "number"
+                },
+                "dnum": {
+                    "type": "integer"
+                },
+                "dueDate": {
+                    "type": "string"
+                },
+                "endBal": {
+                    "type": "number"
+                },
+                "endInt": {
+                    "type": "number"
+                },
+                "endOth": {
+                    "type": "number"
+                },
+                "instFlag": {
+                    "type": "integer"
+                },
+                "instPd": {
+                    "type": "number"
+                },
+                "intr": {
+                    "type": "number"
+                },
+                "oth": {
+                    "type": "number"
+                },
+                "penPd": {
+                    "type": "number"
+                },
+                "penalty": {
+                    "type": "number"
+                },
+                "pledgeAmort": {
+                    "type": "number"
+                },
+                "prin": {
+                    "type": "number"
+                },
+                "servFee": {
+                    "type": "number"
+                },
+                "upInt": {
+                    "type": "number"
                 }
             }
         },
@@ -274,10 +636,442 @@ const docTemplate = `{
                 }
             }
         },
+        "response.CustomerInformation": {
+            "type": "object",
+            "properties": {
+                "accountNumber": {
+                    "type": "string"
+                },
+                "address": {},
+                "birthPlace": {
+                    "type": "string"
+                },
+                "brCode": {
+                    "type": "integer"
+                },
+                "business": {
+                    "type": "integer"
+                },
+                "centerCode": {
+                    "type": "integer"
+                },
+                "centerName": {},
+                "cid": {
+                    "type": "integer"
+                },
+                "civilStatus": {
+                    "type": "integer"
+                },
+                "classification": {
+                    "type": "integer"
+                },
+                "contact": {},
+                "doBirth": {
+                    "type": "string"
+                },
+                "doEntry": {
+                    "type": "string"
+                },
+                "doRecognized": {
+                    "type": "string"
+                },
+                "doResigned": {
+                    "type": "string"
+                },
+                "dosri": {
+                    "type": "integer"
+                },
+                "firstname": {
+                    "type": "string"
+                },
+                "lastname": {
+                    "type": "string"
+                },
+                "maidenFname": {
+                    "type": "string"
+                },
+                "maidenLName": {
+                    "type": "string"
+                },
+                "maidenMName": {
+                    "type": "string"
+                },
+                "memberMaidenFName": {
+                    "type": "string"
+                },
+                "memberMaidenLName": {
+                    "type": "string"
+                },
+                "memberMaidenMName": {
+                    "type": "string"
+                },
+                "middlename": {
+                    "type": "string"
+                },
+                "reffered": {
+                    "type": "string"
+                },
+                "remarks": {
+                    "type": "string"
+                },
+                "searchName": {},
+                "sex": {
+                    "type": "integer"
+                },
+                "status": {
+                    "type": "integer"
+                },
+                "subClassification": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "integer"
+                },
+                "unitCode": {
+                    "type": "integer"
+                },
+                "unitName": {}
+            }
+        },
+        "response.Details": {
+            "type": "object",
+            "properties": {
+                "coreReference": {
+                    "type": "string"
+                },
+                "customerName": {
+                    "type": "string"
+                },
+                "customerNumber": {
+                    "type": "string"
+                },
+                "paidDate": {},
+                "referenceNumber": {
+                    "type": "string"
+                },
+                "sourceAccountNumber": {},
+                "sourceId": {},
+                "transactionAmount": {
+                    "type": "number"
+                }
+            }
+        },
+        "response.GenerateCol": {
+            "type": "object",
+            "properties": {
+                "acc": {
+                    "type": "string"
+                },
+                "acctDesc": {
+                    "type": "string"
+                },
+                "accttype": {
+                    "type": "integer"
+                },
+                "amort": {
+                    "type": "number"
+                },
+                "appType": {
+                    "type": "integer"
+                },
+                "area": {
+                    "type": "string"
+                },
+                "areaCode": {
+                    "type": "integer"
+                },
+                "balInt": {
+                    "type": "number"
+                },
+                "balPrin": {
+                    "type": "number"
+                },
+                "centerCode": {
+                    "type": "integer"
+                },
+                "centerName": {
+                    "type": "string"
+                },
+                "classDesc": {
+                    "type": "string"
+                },
+                "classification": {
+                    "type": "integer"
+                },
+                "clientName": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "integer"
+                },
+                "dateStart": {
+                    "type": "string"
+                },
+                "disbdate": {
+                    "type": "string"
+                },
+                "dueInt": {
+                    "type": "number"
+                },
+                "duePrin": {
+                    "type": "number"
+                },
+                "gives": {
+                    "type": "integer"
+                },
+                "ibalInt": {
+                    "type": "number"
+                },
+                "ibalPrin": {
+                    "type": "number"
+                },
+                "iiid": {
+                    "type": "integer"
+                },
+                "interest": {
+                    "type": "number"
+                },
+                "loanBal": {
+                    "type": "number"
+                },
+                "manCode": {
+                    "type": "integer"
+                },
+                "maturity": {
+                    "type": "string"
+                },
+                "pay": {
+                    "type": "number"
+                },
+                "principal": {
+                    "type": "number"
+                },
+                "saveBal": {
+                    "type": "number"
+                },
+                "staffName": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                },
+                "statusDesc": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "um": {
+                    "type": "string"
+                },
+                "unit": {
+                    "type": "string"
+                },
+                "unpaidCtr": {
+                    "type": "integer"
+                },
+                "uuid": {},
+                "waiveInt": {
+                    "type": "number"
+                },
+                "withdraw": {
+                    "type": "number"
+                },
+                "writeoff": {
+                    "type": "integer"
+                },
+                "writtenoff": {
+                    "type": "integer"
+                }
+            }
+        },
+        "response.LoanInfo": {
+            "type": "object",
+            "properties": {
+                "acc": {
+                    "type": "string"
+                },
+                "accDesc": {
+                    "type": "string"
+                },
+                "acctType": {
+                    "type": "integer"
+                },
+                "amort": {},
+                "amortList": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/response.AmortList"
+                    }
+                },
+                "amortcond": {
+                    "type": "integer"
+                },
+                "amortcondvalue": {
+                    "type": "number"
+                },
+                "annumdiv": {
+                    "type": "integer"
+                },
+                "appType": {
+                    "type": "integer"
+                },
+                "approvby": {
+                    "type": "string"
+                },
+                "balance": {
+                    "type": "number"
+                },
+                "charges": {},
+                "cid": {
+                    "type": "integer"
+                },
+                "classification_code": {
+                    "type": "integer"
+                },
+                "classification_type": {
+                    "type": "integer"
+                },
+                "conintrate": {
+                    "type": "number"
+                },
+                "cycle": {
+                    "type": "integer"
+                },
+                "disbby": {
+                    "type": "string"
+                },
+                "discounted": {
+                    "type": "number"
+                },
+                "domaturity": {
+                    "type": "string"
+                },
+                "dopen": {
+                    "type": "string"
+                },
+                "frequency": {
+                    "type": "integer"
+                },
+                "fundsource": {
+                    "type": "integer"
+                },
+                "interest": {
+                    "type": "number"
+                },
+                "intr": {
+                    "type": "number"
+                },
+                "isLumpsum": {
+                    "type": "integer"
+                },
+                "lngrpcode": {
+                    "type": "integer"
+                },
+                "loanID": {},
+                "netproceed": {
+                    "type": "number"
+                },
+                "oth": {
+                    "type": "number"
+                },
+                "others": {
+                    "type": "number"
+                },
+                "penalty": {
+                    "type": "number"
+                },
+                "prin": {
+                    "type": "number"
+                },
+                "principal": {
+                    "type": "number"
+                },
+                "proff": {
+                    "type": "integer"
+                },
+                "remarks": {},
+                "status": {
+                    "type": "integer"
+                },
+                "term": {
+                    "type": "integer"
+                },
+                "waivedint": {
+                    "type": "number"
+                },
+                "weekspaid": {
+                    "type": "integer"
+                }
+            }
+        },
+        "response.LoanList": {
+            "type": "object",
+            "properties": {
+                "acc": {
+                    "type": "string"
+                },
+                "acctType": {
+                    "type": "string"
+                },
+                "balance": {
+                    "type": "number"
+                },
+                "dateRelease": {
+                    "type": "string"
+                },
+                "interest": {
+                    "type": "number"
+                },
+                "oth": {
+                    "type": "number"
+                },
+                "paidTerm": {
+                    "type": "integer"
+                },
+                "principal": {
+                    "type": "number"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "term": {
+                    "type": "integer"
+                }
+            }
+        },
+        "response.OpenPaymentResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "details": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/response.Details"
+                    }
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "response.ResponseModel": {
             "type": "object",
             "properties": {
                 "data": {},
+                "message": {
+                    "type": "string"
+                },
+                "retCode": {
+                    "type": "string"
+                }
+            }
+        },
+        "response.ResponseModelwoData": {
+            "type": "object",
+            "properties": {
                 "message": {
                     "type": "string"
                 },

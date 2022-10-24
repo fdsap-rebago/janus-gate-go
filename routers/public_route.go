@@ -31,5 +31,11 @@ func SetupPublicRoutes(app *fiber.App) {
 	coreEndpoint.Post("/getSavingsForSuperApp", coremicro.SuperAppSaving)
 	coreEndpoint.Post("/callBackReference", coremicro.CallBackReference)
 	coreEndpoint.Post("/custSavingInfo", coremicro.CustSavingInfo)
-	coreEndpoint.Post("/customerSavings", coremicro.CustSavings)
+	coreEndpoint.Post("/customerSavingsList", coremicro.CustSavings)
+	coreEndpoint.Post("/generateColCid", coremicro.GenerateColCid)
+	coreEndpoint.Post("/loanInfo", coremicro.LoanInfo)
+	coreEndpoint.Post("/multiplePayment", coremicro.MultiplePayment)
+	coreEndpoint.Post("/openPaymentTransaction", coremicro.OpenPayment)
+	coreEndpoint.Post("/searchCustomerCID", coremicro.SearchCustomerCID)
+	coreEndpoint.Post("/searchLoanList", coremicro.SearchLoanList)
 }

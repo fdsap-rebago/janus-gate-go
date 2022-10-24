@@ -5,3 +5,8 @@ type ResponseModel struct {
 	Message string      `json:"message"`
 	Data    interface{} `json:"data"`
 }
+
+type ResponseModelwoData struct {
+	RetCode string `json:"retCode"`
+	Message string `json:"message"`
+}
