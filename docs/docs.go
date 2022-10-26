@@ -1120,11 +1120,11 @@ const docTemplate = `{
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "2.0",
+	Version:          "1.0",
 	Host:             "192.168.0.137:5000",
 	BasePath:         "/",
 	Schemes:          []string{},
-	Title:            "JANUS V2",
+	Title:            "JANUS GATE - GO",
 	Description:      "JANUS Swagger JanusGate",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,

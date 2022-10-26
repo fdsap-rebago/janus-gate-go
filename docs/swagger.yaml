@@ -473,8 +473,8 @@ info:
   description: JANUS Swagger JanusGate
   license: {}
   termsOfService: http://swagger.io/terms/
-  title: JANUS V2
-  version: "2.0"
+  title: JANUS GATE - GO
+  version: "1.0"
 paths:
   /api/public/v1/coremicro/callBackReference:
     post:

@@ -12,7 +12,7 @@ import (
 )
 
 // @title JANUS GATE - GO
-// @version 2.0
+// @version 1.0
 // @description JANUS Swagger JanusGate
 // @termsOfService http://swagger.io/terms/
 // @contact.name FDSAP Support

@@ -2,13 +2,13 @@
     "swagger": "2.0",
     "info": {
         "description": "JANUS Swagger JanusGate",
-        "title": "JANUS V2",
+        "title": "JANUS GATE - GO",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
             "name": "FDSAP Support"
         },
         "license": {},
-        "version": "2.0"
+        "version": "1.0"
     },
     "host": "192.168.0.137:5000",
     "basePath": "/",
