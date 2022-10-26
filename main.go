@@ -11,7 +11,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/logger"
 )
 
-// @title JANUS V2
+// @title JANUS GATE - GO
 // @version 2.0
 // @description JANUS Swagger JanusGate
 // @termsOfService http://swagger.io/terms/
