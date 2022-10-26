@@ -19,7 +19,7 @@ import (
 // @contact.email
 // @license.name
 // @license.url
-// @host localhost:8000
+// @host 192.168.0.137:5000
 // @BasePath /
 func main() {
 	// Initialize DB here

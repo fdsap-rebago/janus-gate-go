@@ -15,7 +15,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-// Developer		rebago
+// Developer		Raymond
 // @summary 	  	CORE-AVAILABLE-BALANCE
 // @Description	  	Used to get the total and available amount of client savings
 // @Tags		  	CORE MICRO
@@ -89,7 +89,7 @@ func SuperAppSaving(c *fiber.Ctx) error {
 	return c.JSON(result)
 }
 
-// Developer 		rebago
+// Developer 		Raymond
 // @summary 	  	CORE-TRANSACTION-CHECKER
 // @Description	  	Used to check if the transaction is posted in CORE
 // @Tags		  	CORE MICRO
@@ -103,7 +103,6 @@ func CallBackReference(c *fiber.Ctx) error {
 	prNumber := request.PRNumber{}
 
 	if parsErr := c.BodyParser(&prNumber); parsErr != nil {
-		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, parsErr, "localhost:8000")
 		return c.JSON(response.ResponseModel{
 			RetCode: "400",
 			Message: "Bad request",
@@ -115,7 +114,6 @@ func CallBackReference(c *fiber.Ctx) error {
 
 	fmt.Println("Marshall:", marshallErr)
 	if marshallErr != nil {
-		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, marshallErr, "localhost:8000")
 		return c.JSON(response.ResponseModel{
 			RetCode: "400",
 			Message: "Can't masrhall",
@@ -126,7 +124,6 @@ func CallBackReference(c *fiber.Ctx) error {
 	resp, respErr := http.Post("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", "application/json; charset=utf-8", bytes.NewBuffer(marshallReq))
 
 	if respErr != nil {
-		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, respErr, "localhost:8000")
 		return c.JSON(response.ResponseModel{
 			RetCode: "400",
 			Message: "Can't masrhall",
@@ -138,7 +135,6 @@ func CallBackReference(c *fiber.Ctx) error {
 	body, readErr := ioutil.ReadAll(resp.Body)
 
 	if readErr != nil {
-		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, readErr, "localhost:8000")
 		return c.JSON(response.ResponseModel{
 			RetCode: "400",
 			Message: "Reading error",
@@ -151,7 +147,6 @@ func CallBackReference(c *fiber.Ctx) error {
 	unmErr := json.Unmarshal(body, &result)
 
 	if unmErr != nil {
-		// middleware.SystemLoggerErrorAPI("https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef", prNumber, "CORE-MICRO", nil, unmErr, "localhost:8000")
 		return c.JSON(response.ResponseModel{
 			RetCode: "400",
 			Message: "Unmarshall error",
@@ -690,5 +685,4 @@ func SearchLoanList(c *fiber.Ctx) error {
 
 	middleware.SystemLoggerAPI("https://cmfstest.cardmri.com/CoreAccounts/API/mobile/api/v1/searchLoanList", cid, "CORE-MICRO", resp, result, "localhost:8000")
 	return c.JSON(result)
-
 }

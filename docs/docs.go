@@ -1076,7 +1076,7 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "retCode": {
-                    "type": "string"
+                    "type": "integer"
                 }
             }
         },
@@ -1121,7 +1121,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "2.0",
-	Host:             "localhost:8000",
+	Host:             "192.168.0.137:5000",
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "JANUS V2",

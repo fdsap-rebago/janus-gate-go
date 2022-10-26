@@ -1,8 +1,8 @@
 package response
 
 type SuperSaving struct {
-	Cid              int     `json:"cid"`
-	FullName         string  `json:"fullname"`
+	Cid              int     `json:"cid" swaggertype:"integer"`
+	FullName         string  `json:"fullname" swaggertype:"string"`
 	Acc              string  `json:"acc"`
 	Balance          float32 `json:"balance"`
 	Withdrawable     float32 `json:"withdrawable"`

@@ -145,3 +145,10 @@ INFO: 2022/10/24 16:10:55 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/
 INFO: 2022/10/24 16:10:55 CORE-MICRO: BODY: request.CID{Cid:10724585}
 INFO: 2022/10/24 16:10:55 CORE-MICRO: RESPONSE: []response.LoanList{response.LoanList{Acc:"4002-0000-30019046", Status:"Current Loan", DataRelease:"2022-07-20", AcctType:"Sikap 2", Principal:4000, Interest:589, Oth:0, Balance:2589, Term:23, PaidTerm:10}, response.LoanList{Acc:"4002-0000-28287803", Status:"Closed", DataRelease:"2022-02-11", AcctType:"Sikap 2", Principal:3000, Interest:442, Oth:0, Balance:0, Term:23, PaidTerm:23}}
 INFO: 2022/10/24 16:10:55 CORE-MICRO: STATUS: 200 
+2022/10/24 16:31:38 
+INFO: 2022/10/24 16:31:38 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/24 16:31:38 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/24 16:31:38 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo
+INFO: 2022/10/24 16:31:38 CORE-MICRO: BODY: request.Acc{Acc:"1012-0000-00060776"}
+INFO: 2022/10/24 16:31:38 CORE-MICRO: RESPONSE: []response.CustSavingInfo{response.CustSavingInfo{Cid:9273835, Acc:"1012-0000-00060776", AppType:0, AcctType:60, AccDesc:"Pledge Account", Dopen:"2009-08-15", Status:10, ClassificationCode:0, ClassificationType:0, Balance:7403.08}}
+INFO: 2022/10/24 16:31:38 CORE-MICRO: STATUS: 200 

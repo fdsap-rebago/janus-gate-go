@@ -7,6 +7,6 @@ type ResponseModel struct {
 }
 
 type ResponseModelwoData struct {
-	RetCode string `json:"retCode"`
+	RetCode int    `json:"retCode"`
 	Message string `json:"message"`
 }

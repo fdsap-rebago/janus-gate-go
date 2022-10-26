@@ -16,6 +16,7 @@ import (
 
 func SetupPublicRoutes(app *fiber.App) {
 	// Swagger
+	// app.Get("/docs/*", swagger.HandlerDefault)
 	app.Get("/docs/*", swagger.HandlerDefault)
 
 	// Endpoints

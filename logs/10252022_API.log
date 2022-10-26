@@ -1,0 +1,133 @@
+2022/10/25 08:18:03 
+INFO: 2022/10/25 08:18:03 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 08:18:03 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 08:18:03 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/mobile/api/v1/searchLoanList
+INFO: 2022/10/25 08:18:03 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/25 08:18:03 CORE-MICRO: RESPONSE: []response.LoanList{response.LoanList{Acc:"4002-0000-30019046", Status:"Current Loan", DataRelease:"2022-07-20", AcctType:"Sikap 2", Principal:4000, Interest:589, Oth:0, Balance:2589, Term:23, PaidTerm:10}, response.LoanList{Acc:"4002-0000-28287803", Status:"Closed", DataRelease:"2022-02-11", AcctType:"Sikap 2", Principal:3000, Interest:442, Oth:0, Balance:0, Term:23, PaidTerm:23}}
+INFO: 2022/10/25 08:18:03 CORE-MICRO: STATUS: 200 
+2022/10/25 14:52:33 
+INFO: 2022/10/25 14:52:33 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 14:52:33 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 14:52:33 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo
+INFO: 2022/10/25 14:52:33 CORE-MICRO: BODY: request.Acc{Acc:"1012-0000-00060776"}
+INFO: 2022/10/25 14:52:33 CORE-MICRO: RESPONSE: []response.CustSavingInfo{response.CustSavingInfo{Cid:9273835, Acc:"1012-0000-00060776", AppType:0, AcctType:60, AccDesc:"Pledge Account", Dopen:"2009-08-15", Status:10, ClassificationCode:0, ClassificationType:0, Balance:7403.08}}
+INFO: 2022/10/25 14:52:33 CORE-MICRO: STATUS: 200 
+2022/10/25 14:56:42 
+INFO: 2022/10/25 14:56:42 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 14:56:42 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 14:56:42 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo
+INFO: 2022/10/25 14:56:42 CORE-MICRO: BODY: request.Acc{Acc:"1012-0000-00060776"}
+INFO: 2022/10/25 14:56:42 CORE-MICRO: RESPONSE: []response.CustSavingInfo{response.CustSavingInfo{Cid:9273835, Acc:"1012-0000-00060776", AppType:0, AcctType:60, AccDesc:"Pledge Account", Dopen:"2009-08-15", Status:10, ClassificationCode:0, ClassificationType:0, Balance:7403.08}}
+INFO: 2022/10/25 14:56:42 CORE-MICRO: STATUS: 200 
+2022/10/25 14:57:06 
+INFO: 2022/10/25 14:57:06 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 14:57:06 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 14:57:06 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo
+INFO: 2022/10/25 14:57:06 CORE-MICRO: BODY: request.Acc{Acc:"1012-0000-0006077"}
+INFO: 2022/10/25 14:57:06 CORE-MICRO: RESPONSE: []response.CustSavingInfo{}
+INFO: 2022/10/25 14:57:06 CORE-MICRO: STATUS: 200 
+2022/10/25 14:57:27 
+INFO: 2022/10/25 14:57:27 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 14:57:27 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 14:57:27 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo
+INFO: 2022/10/25 14:57:27 CORE-MICRO: BODY: request.Acc{Acc:"1012-0000-00060776"}
+INFO: 2022/10/25 14:57:27 CORE-MICRO: RESPONSE: []response.CustSavingInfo{response.CustSavingInfo{Cid:9273835, Acc:"1012-0000-00060776", AppType:0, AcctType:60, AccDesc:"Pledge Account", Dopen:"2009-08-15", Status:10, ClassificationCode:0, ClassificationType:0, Balance:7403.08}}
+INFO: 2022/10/25 14:57:27 CORE-MICRO: STATUS: 200 
+2022/10/25 15:14:52 
+INFO: 2022/10/25 15:14:52 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:14:52 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:14:52 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/mobile/api/v1/SearchCustomerCID
+INFO: 2022/10/25 15:14:52 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/25 15:14:52 CORE-MICRO: RESPONSE: response.CustomerInformation{Cid:10724585, Lastname:"PANTALEON", FirstName:"ROMMEL", MiddleName:"SAN  MIGUEL", MaidenFName:"Myrna", MaidenLName:"San Miguel", MaidenMName:"P", DoBirth:"1993-09-02", BirthPlace:"CITY OF SANTA ROSA, LAGUNA", Sex:19, CivilStatus:154, Title:146, Status:14, Classification:1872, SubClassification:1884, Business:2577, DEntry:"2022-02-10", DoRecognized:"2022-02-10", DoResigned:"1900-01-01", BrCode:467863, UnitCode:468363, CenterCode:9255758, Dosri:0, Reffered:"CARD MRI MEMBER", Remarks:"NA", AccountNumber:"6500107245850", SearchName:interface {}(nil), Address:[]interface {}{map[string]interface {}{"addressDetails":"", "addressID":2.535433e+06, "addressType":"Home Address", "addressTypeID":395, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}, map[string]interface {}{"addressDetails":"", "addressID":2.535434e+06, "addressType":"Current Address", "addressTypeID":392, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}, map[string]interface {}{"addressDetails":"", "addressID":2.535435e+06, "addressType":"Birth Place", "addressTypeID":1990, "barangay":"Pook", "barangayID":65550, "iiid":1.0724585e+07, "province":"Laguna", "provinceID":411, "townCity":"Sta. Rosa City", "townCityID":2900, "zipCode":4026}}, Contact:[]interface {}{map[string]interface {}{"contact":"09157694531", "contactType":"Primary Contact", "contactTypeID":3018, "iiid":1.0724585e+07, "series":2}}, MemberMaidenFName:"RommeL", MemberMaidenLName:"San  Miguel", MemberMaidenMName:"", UnitName:interface {}(nil), CenterName:interface {}(nil)}
+INFO: 2022/10/25 15:14:52 CORE-MICRO: STATUS: 200 
+2022/10/25 15:22:12 
+INFO: 2022/10/25 15:22:12 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:22:12 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:22:12 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo
+INFO: 2022/10/25 15:22:12 CORE-MICRO: BODY: request.Acc{Acc:"1012-0000-00060776"}
+INFO: 2022/10/25 15:22:12 CORE-MICRO: RESPONSE: []response.CustSavingInfo{response.CustSavingInfo{Cid:9273835, Acc:"1012-0000-00060776", AppType:0, AcctType:60, AccDesc:"Pledge Account", Dopen:"2009-08-15", Status:10, ClassificationCode:0, ClassificationType:0, Balance:7403.08}}
+INFO: 2022/10/25 15:22:12 CORE-MICRO: STATUS: 200 
+2022/10/25 15:23:22 
+INFO: 2022/10/25 15:23:22 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:23:22 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:23:22 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/OpenPaymentTransaction
+INFO: 2022/10/25 15:23:22 CORE-MICRO: BODY: request.OpenPaymentRequest{AccountNumber:"1129000022901288", Amount:20, TrnReference:"CIP123-trndate01", Particulars:"Client Initiated Payment - Weekly Due Payment", Username:"konek2CARD", SourceSaveAcc:"1012-0000-37622903", TransFee:0, TransFeeParticulars:"string"}
+INFO: 2022/10/25 15:23:22 CORE-MICRO: RESPONSE: response.OpenPaymentResponse{Code:"1001", Message:"Payment was successfully Posted", Details:[]response.Details{response.Details{SourceId:interface {}(nil), SourceAccountNumber:interface {}(nil), CustomerNumber:"1129000022901288", CustomerName:"ROTAQUIO, MARILOU ALILIN", TransactionAmount:20, ReferenceNumber:"CIP123-trndate01", CoreReference:"", PaidDate:interface {}(nil)}}}
+INFO: 2022/10/25 15:23:22 CORE-MICRO: STATUS: 200 
+2022/10/25 15:39:05 
+INFO: 2022/10/25 15:39:05 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:39:05 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:39:05 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/25 15:39:05 CORE-MICRO: BODY: request.PRNumber{PrNumber:"AAP36467-1638243443748"}
+INFO: 2022/10/25 15:39:05 CORE-MICRO: RESPONSE: response.ResponseModelwoData{RetCode:1001, Message:"Transaction Exist!"}
+INFO: 2022/10/25 15:39:05 CORE-MICRO: STATUS: 200 
+2022/10/25 15:40:06 
+INFO: 2022/10/25 15:40:06 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:40:06 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:40:06 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/25 15:40:06 CORE-MICRO: BODY: request.PRNumber{PrNumber:"AAP10876-1665412271576"}
+INFO: 2022/10/25 15:40:06 CORE-MICRO: RESPONSE: response.ResponseModelwoData{RetCode:4001, Message:"Transaction does not Exist!"}
+INFO: 2022/10/25 15:40:06 CORE-MICRO: STATUS: 200 
+2022/10/25 15:41:18 
+INFO: 2022/10/25 15:41:18 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:41:18 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:41:18 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/25 15:41:18 CORE-MICRO: BODY: request.PRNumber{PrNumber:"AAP19748-1665964756226"}
+INFO: 2022/10/25 15:41:18 CORE-MICRO: RESPONSE: response.ResponseModelwoData{RetCode:4001, Message:"Transaction does not Exist!"}
+INFO: 2022/10/25 15:41:18 CORE-MICRO: STATUS: 200 
+2022/10/25 15:46:25 
+INFO: 2022/10/25 15:46:25 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:46:25 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:46:25 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/25 15:46:25 CORE-MICRO: BODY: request.PRNumber{PrNumber:"AAP2830-1639031031940"}
+INFO: 2022/10/25 15:46:25 CORE-MICRO: RESPONSE: response.ResponseModelwoData{RetCode:1001, Message:"Transaction Exist!"}
+INFO: 2022/10/25 15:46:25 CORE-MICRO: STATUS: 200 
+2022/10/25 15:46:53 
+INFO: 2022/10/25 15:46:53 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:46:53 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:46:53 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingInfo
+INFO: 2022/10/25 15:46:53 CORE-MICRO: BODY: request.Acc{Acc:"1012-0000-00060776"}
+INFO: 2022/10/25 15:46:53 CORE-MICRO: RESPONSE: []response.CustSavingInfo{response.CustSavingInfo{Cid:9273835, Acc:"1012-0000-00060776", AppType:0, AcctType:60, AccDesc:"Pledge Account", Dopen:"2009-08-15", Status:10, ClassificationCode:0, ClassificationType:0, Balance:7403.08}}
+INFO: 2022/10/25 15:46:53 CORE-MICRO: STATUS: 200 
+2022/10/25 15:47:17 
+INFO: 2022/10/25 15:47:17 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:47:17 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:47:17 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/custSavingsList
+INFO: 2022/10/25 15:47:17 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/25 15:47:17 CORE-MICRO: RESPONSE: []response.CustSavingsLists{response.CustSavingsLists{Cid:10724585, Acc:"1012-0000-37638438", Acctype:60, AccDesc:"Pledge", Dopen:"2022-02-10", StatusDesc:"Active Account", Balance:1135, Status:10}}
+INFO: 2022/10/25 15:47:17 CORE-MICRO: STATUS: 200 
+2022/10/25 15:47:35 
+INFO: 2022/10/25 15:47:35 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:47:35 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:47:35 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreAccounts/API/generateColShtperCID
+INFO: 2022/10/25 15:47:35 CORE-MICRO: BODY: request.CID{Cid:10724585}
+INFO: 2022/10/25 15:47:35 CORE-MICRO: RESPONSE: []response.GenerateCol{response.GenerateCol{AppType:0, Code:3, Status:1, StatusDesc:"Current: w/ Loans", Acc:"1012-0000-37638438", Iiid:10724585, Um:"", ClientName:"PANTALEON, ROMMEL SAN  MIGUEL", CenterCode:9255758, CenterName:"SK CAINGIN", ManCode:468363, Unit:"Sta.Rosa", AreaCode:467863, Area:"Laguna 2", StaffName:"", Accttype:60, AcctDesc:"Pledge Account", Disbdate:"2022-02-10", DateStart:"1900-01-01", Maturity:"1900-01-01", Principal:0, Interest:0, Gives:0, IbalPrin:0, IbalInt:0, BalPrin:0, BalInt:0, Amort:50, DuePrin:50, DueInt:0, LoanBal:0, SaveBal:1135, WaiveInt:0, UnpaidCtr:0, Writtenoff:0, Classification:1884, ClassDesc:"Regular Client", Writeoff:0, Pay:0, Withdraw:0, Type:0, Uuid:interface {}(nil)}, response.GenerateCol{AppType:1, Code:1, Status:1, StatusDesc:"Current: w/ Loans", Acc:"2043-0000-37928251", Iiid:10724585, Um:"", ClientName:"PANTALEON, ROMMEL SAN  MIGUEL", CenterCode:9255758, CenterName:"SK CAINGIN", ManCode:468363, Unit:"Sta.Rosa", AreaCode:467863, Area:"Laguna 2", StaffName:"", Accttype:201, AcctDesc:"MBA Premium", Disbdate:"2022-02-10", DateStart:"1900-01-01", Maturity:"1900-01-01", Principal:0, Interest:0, Gives:0, IbalPrin:20, IbalInt:0, BalPrin:20, BalInt:0, Amort:20, DuePrin:0, DueInt:0, LoanBal:0, SaveBal:0, WaiveInt:0, UnpaidCtr:0, Writtenoff:0, Classification:1884, ClassDesc:"Regular Client", Writeoff:0, Pay:0, Withdraw:0, Type:0, Uuid:interface {}(nil)}, response.GenerateCol{AppType:3, Code:2, Status:1, StatusDesc:"Current: w/ Loans", Acc:"4002-0000-30019046", Iiid:10724585, Um:"", ClientName:"PANTALEON, ROMMEL SAN  MIGUEL", CenterCode:9255758, CenterName:"SK CAINGIN", ManCode:468363, Unit:"Sta.Rosa", AreaCode:467863, Area:"Laguna 2", StaffName:"", Accttype:302, AcctDesc:"Sikap 2", Disbdate:"2022-07-20", DateStart:"2022-07-27", Maturity:"2023-01-11", Principal:4000, Interest:589, Gives:23, IbalPrin:2382.81, IbalInt:206.19, BalPrin:2382.81, BalInt:206.19, Amort:200, DuePrin:172.25, DueInt:27.75, LoanBal:2589, SaveBal:0, WaiveInt:0, UnpaidCtr:0, Writtenoff:0, Classification:1884, ClassDesc:"Regular Client", Writeoff:0, Pay:0, Withdraw:0, Type:0, Uuid:interface {}(nil)}}
+INFO: 2022/10/25 15:47:35 CORE-MICRO: STATUS: 200 
+2022/10/25 15:48:21 
+INFO: 2022/10/25 15:48:21 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:48:21 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:48:21 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/25 15:48:21 CORE-MICRO: BODY: request.PRNumber{PrNumber:"CIP11282-1637511016914"}
+INFO: 2022/10/25 15:48:21 CORE-MICRO: RESPONSE: response.ResponseModelwoData{RetCode:1001, Message:"Transaction Exist!"}
+INFO: 2022/10/25 15:48:21 CORE-MICRO: STATUS: 200 
+2022/10/25 15:48:41 
+INFO: 2022/10/25 15:48:41 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:48:41 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:48:41 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/25 15:48:41 CORE-MICRO: BODY: request.PRNumber{PrNumber:"CO11696-1637535105546"}
+INFO: 2022/10/25 15:48:41 CORE-MICRO: RESPONSE: response.ResponseModelwoData{RetCode:1001, Message:"Transaction Exist!"}
+INFO: 2022/10/25 15:48:41 CORE-MICRO: STATUS: 200 
+2022/10/25 15:48:55 
+INFO: 2022/10/25 15:48:55 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:48:55 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:48:55 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/25 15:48:55 CORE-MICRO: BODY: request.PRNumber{PrNumber:"CI24450-1637542281029"}
+INFO: 2022/10/25 15:48:55 CORE-MICRO: RESPONSE: response.ResponseModelwoData{RetCode:1001, Message:"Transaction Exist!"}
+INFO: 2022/10/25 15:48:55 CORE-MICRO: STATUS: 200 
+2022/10/25 15:49:08 
+INFO: 2022/10/25 15:49:08 CORE-MICRO: - - - - - - - - - - - - - - -
+INFO: 2022/10/25 15:49:08 CORE-MICRO: FROM: localhost:8000
+INFO: 2022/10/25 15:49:08 CORE-MICRO: URL REQUEST: https://cmfstest.cardmri.com/CoreMFS/API/k2cCallBackRef
+INFO: 2022/10/25 15:49:08 CORE-MICRO: BODY: request.PRNumber{PrNumber:"FT19288-1633088656012"}
+INFO: 2022/10/25 15:49:08 CORE-MICRO: RESPONSE: response.ResponseModelwoData{RetCode:1001, Message:"Transaction Exist!"}
+INFO: 2022/10/25 15:49:08 CORE-MICRO: STATUS: 200 

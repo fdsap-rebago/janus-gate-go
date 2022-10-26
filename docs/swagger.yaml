@@ -441,7 +441,7 @@ definitions:
       message:
         type: string
       retCode:
-        type: string
+        type: integer
     type: object
   response.SuperSaving:
     properties:
@@ -466,7 +466,7 @@ definitions:
       withdrawalAmount:
         type: number
     type: object
-host: localhost:8000
+host: 192.168.0.137:5000
 info:
   contact:
     name: FDSAP Support
